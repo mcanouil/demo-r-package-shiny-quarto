@@ -1,0 +1,48 @@
+title: Acme
+author: Acme Inc
+version: 0.1.0
+quarto-required: ">=1.5.0"
+contributes:
+  metadata:
+    project:
+      brand: _brand.yml
+  formats:
+    common:
+      filters:
+        - filters/prose-divs.lua
+        - filters/copyright-year.lua
+      execute:
+        echo: false
+      lang: en-US
+      date: today
+      date-format: "dddd[, the] Do [of] MMMM, YYYY"
+      toc: true
+      toc-depth: 3
+      number-sections: true
+      copyright: "© Copyright Acme Inc. All rights reserved."
+      fig-align: center
+    html:
+      theme:
+        - cosmo
+        - brand
+        - acme.scss
+      embed-resources: true
+      title-block-banner: true
+      anchor-sections: true
+      link-external-newwindow: true
+    typst:
+      mainfont: "Liberation Sans"
+      papersize: a4
+      margin:
+        top: 2.5cm
+        bottom: 2.5cm
+        left: 2cm
+        right: 2cm
+    revealjs:
+      theme:
+        - default
+        - brand
+        - revealjs/theme.scss
+      embed-resources: true
+      slide-number: c
+      toc: false

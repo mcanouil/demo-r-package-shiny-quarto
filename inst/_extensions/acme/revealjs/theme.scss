@@ -1,0 +1,25 @@
+/*-- scss:defaults --*/
+
+$acme-primary: #1f3a93;
+$acme-accent: #e8662c;
+$acme-light: #eef2fb;
+
+$body-color: #4a4a4a !default;
+$link-color: $acme-accent !default;
+$selection-bg: $acme-light !default;
+
+/*-- scss:rules --*/
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  color: $acme-primary;
+}
+
+.reveal .slide-number {
+  color: $acme-accent;
+}
+
+.reveal section a {
+  color: $acme-accent;
+}

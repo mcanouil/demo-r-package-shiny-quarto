@@ -1,0 +1,29 @@
+# R
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rproj
+
+# Package build
+..Rcheck/
+*.tar.gz
+/docs/
+
+# renv
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+renv/python/
+renv/sandbox/
+renv/staging/
+
+# targets
+_targets/
+
+# Quarto
+/.quarto/
+*_files/
+/_extensions/

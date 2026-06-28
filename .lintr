@@ -1,0 +1,13 @@
+linters: linters_with_defaults(
+    line_length_linter = line_length_linter(120),
+    # S7 classes are intentionally CamelCase; S3 fallbacks are dotted.case.
+    object_name_linter = object_name_linter(styles = c("snake_case", "CamelCase", "dotted.case")),
+    # Disabled: lintr's usage analysis false-positives on S7 methods defined via
+    # `S7::method(generic, Class) <- fn` and on required-but-unused framework
+    # arguments (Shiny's request/input/output/session, .onLoad's libname/pkgname).
+    object_usage_linter = NULL
+  )
+exclusions: list(
+    "inst/templates/_targets.R" = Inf,
+    "inst/templates/report.qmd" = Inf
+  )

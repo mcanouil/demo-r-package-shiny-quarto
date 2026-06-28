@@ -1,0 +1,22 @@
+# Pipeline config schema (reference + example).
+#
+# generate_pipeline() accepts a list or a path to a YAML file with this shape.
+# Required fields are marked; everything else is optional.
+
+# REQUIRED. The input dataset.
+data:
+  file: demo.csv        # REQUIRED. Path to a CSV file (becomes a `file` target).
+  name: demo            # Optional. Label stored on the Dataset. Default: "dataset".
+
+# Optional. A named map of analyses; each becomes one target.
+analyses:
+  summary:              # Target name.
+    method: describe    # One of: describe | correlate.
+  pairs:
+    method: correlate
+
+# Optional. Report metadata consumed by report_pipeline()/report.qmd.
+report:
+  title: "Acme Analysis Report"
+  formats:
+    - acme-html         # One or more of: acme-html | acme-typst | acme-revealjs.

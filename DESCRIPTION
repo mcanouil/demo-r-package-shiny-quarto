@@ -1,0 +1,44 @@
+Package: acme.toolkit
+Title: Reference Architecture for S7 + targets + Quarto + Shiny R Packages
+Version: 0.1.0
+Authors@R: c(
+    person("Mickaël", "Canouil", , "pro@mickael.canouil.dev", role = c("aut", "cre"),
+      comment = c(ORCID = "0000-0002-3396-4549"))
+  )
+Description: A minimal, domain-neutral R package that demonstrates a reusable
+    architecture for analysis tooling: an S7 object model with search-path
+    fallback, a config-driven targets pipeline rendered from a Whisker
+    template, parameterised Quarto reporting backed by a branded multi-format
+    extension, and a modular Shiny application. The toy domain is generic
+    tabular analysis (summary statistics) so the package builds with no heavy
+    dependencies.
+License: MIT + file LICENSE
+URL: https://github.com/mcanouil/demo-r-package-shiny-quarto
+Depends:
+    R (>= 4.4.0)
+Imports:
+    cli,
+    rlang,
+    S7,
+    stats,
+    utils
+Suggests:
+    bslib,
+    dplyr,
+    ggplot2,
+    knitr,
+    pkgdown,
+    quarto,
+    shiny,
+    tarchetypes,
+    targets,
+    testthat (>= 3.0.0),
+    whisker,
+    withr,
+    yaml
+Config/roxygen2/version: 8.0.0
+Config/roxygen2/markdown: TRUE
+Config/testthat/edition: 3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 8.0.0

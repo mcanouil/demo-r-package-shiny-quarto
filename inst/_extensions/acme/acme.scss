@@ -1,0 +1,73 @@
+/*-- scss:defaults --*/
+
+$acme-primary: #1f3a93;
+$acme-accent: #e8662c;
+$acme-light: #eef2fb;
+
+/*-- scss:rules --*/
+
+// Title banner
+.quarto-title-banner {
+  background-color: $acme-primary;
+  color: white;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 4px solid $acme-accent;
+
+  .title {
+    color: white;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    color: rgba(white, 0.85);
+  }
+}
+
+// Code blocks get an accent rule
+div.sourceCode {
+  border: none;
+  border-left: 3px solid $acme-accent;
+  border-radius: 0 4px 4px 0;
+}
+
+// Prose callout divs (paired with filters/prose-divs.lua)
+.prose-context {
+  background: mix($acme-light, white, 60%);
+  padding: 0.6rem 1rem;
+  margin: 0.75rem 0;
+  border-radius: 4px;
+
+  &::before {
+    content: "Context";
+    display: inline-block;
+    font-size: 0.65em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $acme-primary;
+    margin-right: 0.5em;
+  }
+}
+
+.prose-interpret {
+  background: mix($acme-accent, white, 6%);
+  padding: 0.6rem 1rem;
+  margin: 0.75rem 0;
+  border-radius: 4px;
+  border-bottom: 2px solid mix($acme-accent, white, 40%);
+
+  &::before {
+    content: "Interpretation";
+    display: inline-block;
+    font-size: 0.65em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: white;
+    background: $acme-accent;
+    padding: 0.15em 0.5em;
+    border-radius: 2px;
+    margin-right: 0.5em;
+  }
+}

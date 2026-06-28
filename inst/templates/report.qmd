@@ -1,0 +1,47 @@
+---
+title: "Acme Analysis Report"
+format: acme-html
+execute:
+  echo: false
+  warning: false
+params:
+  store: "_targets"
+---
+
+```{r}
+#| label: setup
+library(acme.toolkit)
+store <- Sys.getenv("TAR_STORE", unset = params$store)
+```
+
+This report reads results from a `targets` store and summarises each analysis.
+Parameters and the store path are supplied at render time, so the same template
+serves every pipeline.
+
+```{r}
+#| label: results
+#| output: asis
+targets <- targets::tar_manifest(store = store)$name
+analysis_targets <- setdiff(targets, c("input_file", "dataset"))
+
+for (name in analysis_targets) {
+  result <- targets::tar_read_raw(name, store = store)
+  cat("\n\n## ", name, " (", result@method, ")\n\n", sep = "")
+  print(knitr::kable(result@summary))
+}
+```
+
+```{r}
+#| label: plot
+#| eval: !expr requireNamespace("ggplot2", quietly = TRUE) && length(analysis_targets) > 0
+first <- targets::tar_read_raw(analysis_targets[[1]], store = store)
+if (identical(first@method, "describe")) {
+  library(ggplot2)
+  ggplot(first@summary) +
+    aes(x = stats::reorder(.data$variable, .data$mean), y = .data$mean) +
+    geom_col(fill = acme.toolkit:::acme_palette()[["primary"]]) +
+    coord_flip() +
+    labs(x = "Variable", y = "Mean") +
+    theme_acme()
+}
+```

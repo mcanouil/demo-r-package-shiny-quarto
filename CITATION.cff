@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "acme.toolkit: Reference Architecture for S7 + targets + Quarto + Shiny R Packages"
+message: "If you use this project, please cite it as below."
+type: software
+authors:
+  - family-names: "Canouil"
+    given-names: "Mickaël"
+    orcid: "https://orcid.org/0000-0002-3396-4549"
+repository-code: "https://github.com/mcanouil/demo-r-package-shiny-quarto"
+license: MIT
+date-released: "2026-06-28"

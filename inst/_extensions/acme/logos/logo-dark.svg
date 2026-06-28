@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 160 40" role="img" aria-label="Acme Inc">
+  <rect x="0" y="8" width="24" height="24" rx="4" fill="#ffffff"/>
+  <rect x="6" y="14" width="12" height="12" rx="2" fill="#e8662c"/>
+  <text x="34" y="27" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#ffffff">Acme Inc</text>
+</svg>

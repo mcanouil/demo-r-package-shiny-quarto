@@ -1,0 +1,36 @@
+meta:
+  name: Acme Inc
+  link: https://acme.example
+
+color:
+  palette:
+    primary: "#1f3a93"
+    accent: "#e8662c"
+    neutral: "#4a4a4a"
+    light: "#eef2fb"
+    success: "#2e9e5b"
+  foreground:
+    light: "#1f3a93"
+    dark: "white"
+  background:
+    light: "white"
+    dark: "#1f3a93"
+  primary: "#1f3a93"
+  secondary: "#e8662c"
+  link: "#e8662c"
+
+typography:
+  base:
+    family: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif"
+  headings:
+    family: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif"
+    weight: 600
+
+logo:
+  images:
+    light:
+      path: logos/logo-light.svg
+      alt: "Acme Inc logo"
+    dark:
+      path: logos/logo-dark.svg
+      alt: "Acme Inc logo"

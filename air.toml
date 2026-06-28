@@ -1,0 +1,11 @@
+# Air formatter configuration.
+# https://posit-dev.github.io/air/configuration.html
+
+[format]
+line-width = 120
+indent-style = "space"
+indent-width = 2
+exclude = [
+  "inst/templates/_targets.R",
+  "inst/templates/report.qmd"
+]
